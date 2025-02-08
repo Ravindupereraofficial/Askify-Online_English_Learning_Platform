@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Synonym/Antonym Game</title>
+    <link rel="stylesheet" href="css/wordgampage.css">
+</head>
+<body>
+
+    <div id="game">
+        <h1>Synonym/Antonym Game</h1>
+
+        <!-- Difficulty Selection -->
+        <div id="mode-selection">
+            <button class="button" onclick="startGame('synonym')">Find Synonyms</button>
+            <button class="button" onclick="startGame('antonym')">Find Antonyms</button>
+        </div>
+
+        <div id="difficulty-selection" class="hidden">
+            <button class="button" onclick="selectDifficulty('easy')">Easy</button>
+            <button class="button" onclick="selectDifficulty('hard')">Hard</button>
+        </div>
+
+        <!-- Main Game Area -->
+        <div id="game-area" class="hidden">
+            <div id="question"></div>
+            <div id="options"></div>
+            <div id="feedback"></div>
+            <div id="score">Score: 0</div>
+            <div id="timer" class="timer">Time Left: <span id="time-left">60</span>s</div>
+        </div>
+
+        <div id="game-over" class="hidden">
+            <h2>Game Over!</h2>
+            <p id="final-score"></p>
+            <p id="game-status"></p>
+        </div>
+    </div>
+
+    <script src="js/wordgampage.js"></script>
+
+</body>
+</html>
