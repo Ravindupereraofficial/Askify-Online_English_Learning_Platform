@@ -48,3 +48,23 @@ button {
 }
 
 
+button:hover {
+  background: #4fc3f7;
+  transform: scale(1.05);
+}
+
+#status {
+  margin-top: 10px;
+  font-style: italic;
+  color: #666;
+}
+
+.user {
+  color: #1e88e5; 
+  font-weight: bold;
+}
+
+.ai {
+  color: #43a047; 
+  font-weight: bold;
+}
