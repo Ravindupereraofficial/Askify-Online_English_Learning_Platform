@@ -56,3 +56,18 @@ button:hover {
   font-style: italic;
   color: #555;
 }
+
+.user {
+  color: #007bff;
+  font-weight: bold;
+}
+
+.ai {
+  color: #28a745;
+  font-weight: bold;
+}
+
+.correction {
+  color: #dc3545;
+  font-weight: bold;
+}
