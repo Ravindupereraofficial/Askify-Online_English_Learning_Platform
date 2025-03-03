@@ -1,96 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&display=swap');
+
 body {
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #1E2A38, #3A506B);
-    color: #EAF2F8;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #65daff, #e7f2fb);
+    color: #1a2837;
     margin: 0;
-    padding: 0;
+    padding: 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 h1 {
-    font-size: 42px;
-    color: #ffffff;
+    font-size: 32px;
+    color: #1a2837;
     text-align: center;
-    margin-bottom: 20px;
-    text-shadow: 3px 3px 14px rgba(205, 205, 205, 0.7);
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
 }
 
 #game {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 8px 30px rgba(58, 80, 107, 0.6);
-    width: 400px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 12px 40px rgba(101, 218, 255, 0.2);
+    width: 100%;
+    max-width: 320px;
     text-align: center;
-    backdrop-filter: blur(12px);
-    border: 2px solid #faf7f6;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: transform 0.3s ease;
 }
 
 .button {
-    background: linear-gradient(135deg, #FF7F50, #FF6347);
-    color: white;
+    background: linear-gradient(135deg, #ffc107, #ffd54a);
+    color: #1a2837;
     padding: 12px 24px;
     border: none;
-    border-radius: 8px;
+    border-radius: 10px;
     cursor: pointer;
-    font-size: 20px;
-    margin: 12px;
+    font-size: 18px;
+    margin: 0.75rem 0;
     width: 100%;
-    transition: transform 0.2s, box-shadow 0.3s;
-    font-weight: bold;
-    text-shadow: 2px 2px 10px rgba(255, 99, 71, 0.7);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-weight: 600;
+    letter-spacing: 0.5px;
 }
 
 .button:hover {
-    transform: scale(1.05);
-    box-shadow: 0 5px 20px rgba(255, 99, 71, 0.6);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 193, 7, 0.3);
 }
 
 .option {
-    padding: 16px;
-    border: 2px solid #FF7F50;
-    border-radius: 8px;
+    padding: 14px;
+    border: 2px solid #65daff;
+    border-radius: 10px;
     cursor: pointer;
-    font-size: 20px;
-    transition: background-color 0.3s, transform 0.2s;
-    margin: 12px 0;
-    background: rgba(255, 255, 255, 0.2);
-    color: #EAF2F8;
-    text-shadow: 2px 2px 8px rgba(255, 127, 80, 0.6);
+    font-size: 18px;
+    transition: all 0.3s ease;
+    margin: 0.75rem 0;
+    background: rgba(255, 255, 255, 0.9);
+    color: #1a2837;
+    font-weight: 500;
 }
 
 .option:hover {
-    background: #FF7F50;
-    color: #1E2A38;
-    transform: scale(1.05);
+    background: #65daff;
+    color: #ffffff;
+    transform: translateY(-2px);
+    border-color: transparent;
 }
 
 .correct {
-    background-color: #22C55E;
-    color: white;
+    background: rgba(195, 220, 227, 0.9);
+    color: #000000;
+    border-color: transparent;
 }
 
 .incorrect {
-    background-color: #EF4444;
-    color: white;
+    background: rgba(247, 247, 247, 0.9);
+    color: #0a0909;
+    border-color: transparent;
 }
 
 #score, #timer {
-    font-size: 22px;
-    margin-top: 12px;
-    font-weight: bold;
-    text-shadow: 2px 2px 12px rgba(255, 127, 80, 0.5);
+    font-size: 20px;
+    margin-top: 1rem;
+    font-weight: 600;
+    color: #1a2837;
 }
 
 #feedback {
-    margin-top: 20px;
-    font-size: 20px;
-    font-weight: bold;
-    color: #FF7F50;
-    text-shadow: 3px 3px 12px rgba(255, 127, 80, 0.7);
+    margin-top: 1.5rem;
+    font-size: 18px;
+    font-weight: 600;
+    color: #ffc107;
 }
 
 .hidden {
@@ -98,9 +105,24 @@ h1 {
 }
 
 .timer {
-    font-size: 26px;
-    color: #FF7F50;
-    margin-top: 10px;
-    font-weight: bold;
-    text-shadow: 3px 3px 14px rgba(255, 127, 80, 0.7);
+    font-size: 24px;
+    color: #65daff;
+    margin-top: 1rem;
+    font-weight: 700;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    body {
+        padding: 1rem;
+    }
+    
+    #game {
+        padding: 1.5rem;
+        margin: 0 1rem;
+    }
+    
+    h1 {
+        font-size: 28px;
+    }
 }
