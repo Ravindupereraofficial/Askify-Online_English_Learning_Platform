@@ -1,6 +1,8 @@
-body { 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+body {
     font-family: 'Poppins', sans-serif;
-    background-color: #E3F2FD;
+    background-color: #158de2;
     margin: 0;
     overflow: hidden;
     height: 100vh;
@@ -21,67 +23,101 @@ body {
     box-sizing: border-box;
     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(10px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.overlay:hover {
+    box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.15);
 }
 
 .container {
     background: white;
-    padding: 20px;
+    padding: 25px;
     border-radius: 12px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     text-align: center;
     width: 100%;
     box-sizing: border-box;
+    transition: transform 0.3s ease;
 }
 
 h1.topic {
     color: #1565C0;
-    font-size: 24px;
-    margin-bottom: 20px;
+    font-size: 26px;
+    margin-bottom: 25px;
     font-weight: 600;
+    letter-spacing: -0.5px;
 }
 
 #chat-box {
     height: 300px;
     max-height: 50vh;
     width: 100%;
-    border: 1px solid #BBDEFB;
-    margin-bottom: 15px;
+    border: 2px solid #BBDEFB;
+    margin-bottom: 20px;
     overflow-y: auto;
-    padding: 12px;
+    padding: 15px;
     text-align: left;
     background: #F3F8FE;
-    border-radius: 8px;
+    border-radius: 10px;
     box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+#chat-box:focus-within {
+    border-color: #90CAF9;
 }
 
 .input-area {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 12px;
+    gap: 15px;
 }
 
 button {
-    padding: 12px 20px;
+    padding: 14px 24px;
     font-size: 16px;
     cursor: pointer;
     background: #1E88E5;
     color: white;
     border: none;
-    border-radius: 6px;
-    transition: background 0.3s, transform 0.2s;
+    border-radius: 8px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     width: 100%;
-    max-width: 220px;
+    max-width: 240px;
     font-weight: 500;
+    letter-spacing: 0.5px;
+    position: relative;
+    overflow: hidden;
+}
+
+button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.5s ease;
 }
 
 button:hover {
     background: #1565C0;
-    transform: scale(1.05);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(30, 136, 229, 0.3);
+}
+
+button:hover::after {
+    transform: translate(-50%, -50%) scale(1);
 }
 
 button:active {
-    transform: scale(0.98);
+    transform: translateY(1px);
+    box-shadow: 0 4px 12px rgba(30, 136, 229, 0.3);
 }
 
 #status {
@@ -89,39 +125,74 @@ button:active {
     font-style: italic;
     color: #546E7A;
     font-size: 0.9rem;
+    opacity: 0.9;
 }
 
 /* Message styling */
+.message {
+    margin: 12px 0;
+    padding: 10px 16px;
+    border-radius: 12px;
+    display: inline-block;
+    max-width: 80%;
+    animation: messageAppear 0.3s ease;
+}
+
+@keyframes messageAppear {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .user {
+    background: rgba(30, 136, 229, 0.1);
     color: #1E88E5;
-    font-weight: bold;
+    border: 1px solid rgba(30, 136, 229, 0.2);
+    margin-left: auto;
 }
 
 .ai {
+    background: rgba(67, 160, 71, 0.1);
     color: #43A047;
-    font-weight: bold;
+    border: 1px solid rgba(67, 160, 71, 0.2);
+    margin-right: auto;
 }
 
 .correction {
+    background: rgba(229, 57, 53, 0.1);
     color: #E53935;
-    font-weight: bold;
+    border: 1px solid rgba(229, 57, 53, 0.2);
+    margin-right: auto;
 }
 
-/* Scrollbar styling */
+/* Enhanced Scrollbar */
 #chat-box::-webkit-scrollbar {
-    width: 6px;
+    width: 8px;
 }
 
 #chat-box::-webkit-scrollbar-track {
-    background: #E3F2FD;
+    background: rgba(227, 242, 253, 0.5);
     border-radius: 10px;
 }
 
 #chat-box::-webkit-scrollbar-thumb {
-    background: #90CAF9;
+    background: rgba(144, 202, 249, 0.8);
     border-radius: 10px;
+    border: 2px solid transparent;
+    background-clip: content-box;
 }
 
 #chat-box::-webkit-scrollbar-thumb:hover {
     background: #64B5F6;
+}
+
+/* Hover effects for messages */
+.user:hover, .ai:hover, .correction:hover {
+    transform: translateX(4px);
+    transition: transform 0.2s ease;
 }
